@@ -22,9 +22,9 @@ st.header("I can help you plan a trip from first day to the last. Let me know wh
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-with st.form(key = "query_form", clean_on_submit=True):
-    user_input = st.text_input("User Input", placeholder = "e.g Plan a trip to go for 5 days.")
-    submit_button = st.from_submit_button("Send")
+with st.form(key = "query_form", clear_on_submit=True):
+    user_input = st.text_input("User Input", placeholder = "e.g Plan a trip to Marrakech for 5 days.")
+    submit_button = st.form_submit_button("Send")
 
 if submit_button and user_input.strip():
     try:
