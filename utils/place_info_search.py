@@ -32,7 +32,7 @@ class GooglePlaceSearchTool:
         """
         return self.places_tool.run(f"What are the different modes of transportation available in {place}")
     
-class TavilyPlacesSearchTool:
+class TavilyPlaceSearchTool:
     def __init__(self):
         pass
 
