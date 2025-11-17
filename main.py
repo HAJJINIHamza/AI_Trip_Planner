@@ -1,13 +1,25 @@
 import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from agent.agentic_workflow import GraphBuilder
 from fastapi.responses import JSONResponse
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], #Set specific origins in prod
+    allow_credentials=True,
+    allow_methods = ["*"],
+    allow_headers=["*"]
+)
+
 class QueryRequest(BaseModel):
-    query: str
+    question: str
 
 @app.post("/query")
 async def query_travel_agent(query : QueryRequest):
