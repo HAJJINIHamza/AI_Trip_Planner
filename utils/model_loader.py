@@ -24,7 +24,7 @@ class ModelLoader(BaseModel):
         self.config = ConfigLoader()
 
     class Config:
-        arbitrary_types_allower = True
+        arbitrary_types_allowed = True
     
     def load_llm(self):
         """
