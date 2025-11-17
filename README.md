@@ -32,3 +32,10 @@ An Agent AI for planning a trip to any city in the world using real time data
 ```C:\Users\hh\projects\AI_Trip_Planner\env\Scripts\activate.bat```
 
 ```uv pip list ``` 
+
+### APP RUNNING
+To run app, first run both these commands at the same time in different terminals:
+
+```uvicorn main:app --reload --port 8000```
+
+```streamlit run streamlit_app.py```
