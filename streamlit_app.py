@@ -2,6 +2,9 @@ import streamlit as st
 import datetime 
 import requests 
 import sys 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_URL = "http://localhost:8000" #Backedn endpoint
 
