@@ -39,3 +39,5 @@ To run app, first run both these commands at the same time in different terminal
 ```uvicorn main:app --reload --port 8000```
 
 ```streamlit run streamlit_app.py```
+
+**N.B**: command to activate you virtula environement : ```.\.venv\Scripts\activate.bat```     
