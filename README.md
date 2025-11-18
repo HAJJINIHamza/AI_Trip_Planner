@@ -12,6 +12,9 @@ An Agent AI for planning a trip to any city in the world using real time data
 6. Total expenses estimation 
 7. General summary of the trip
 
+### System test screenshot 
+![System test screenshot](ai_trip_planner_test_screenshot.png)
+
 ### First Commands History
 ```uv python list```
 
@@ -39,5 +42,3 @@ To run app, first run both these commands at the same time in different terminal
 ```uvicorn main:app --reload --port 8000```
 
 ```streamlit run streamlit_app.py```
-
-**N.B**: command to activate you virtula environement : ```.\.venv\Scripts\activate.bat```     
