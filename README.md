@@ -42,3 +42,5 @@ To run app, first run both these commands at the same time in different terminal
 ```uvicorn main:app --reload --port 8000```
 
 ```streamlit run streamlit_app.py```
+
+**NB: Dont forget to activate your virtual environement: `.venv\Scripts\activate`**
