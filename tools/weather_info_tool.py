@@ -20,6 +20,7 @@ class WeatherInfoTool:
             """
             Get current weather for a city
             """
+            print ("Loading current weather for city : ", city)
             weather_data = self.weather_service.get_current_weather(city)
             if weather_data:
                 temp = weather_data.get("main", {}).get("temp", "N/A")
@@ -32,6 +33,7 @@ class WeatherInfoTool:
             """
             Get weather forcast for a city
             """
+            print ("Loading weather forecast for city :", city)
             forecast_data = self.weather_service.get_forecast_weather(city)
             if forecast_data and "list" in forecast_data:
                 forecast_summary = []

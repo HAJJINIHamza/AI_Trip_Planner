@@ -37,6 +37,7 @@ async def query_travel_agent(query : QueryRequest):
         #Assuming request is a pydantic object like : {"question": "text"}
         messages = {"messages": [query.question]}
         output = react_app.invoke(messages)
+        print ("Agent output :", output)
 
         #If result is dict with messages
         if isinstance(output, dict) and "messages" in output:
@@ -47,7 +48,3 @@ async def query_travel_agent(query : QueryRequest):
     
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
-
-
-
-        

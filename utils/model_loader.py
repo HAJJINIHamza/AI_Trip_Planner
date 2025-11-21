@@ -42,7 +42,7 @@ class ModelLoader(BaseModel):
             print ("Loading LLM from openai ...")
             openai_api_key = os.getenv("OPENAI_API_KEY")
             model_name = self.config["llm"]["model_name"]
-            llm = ChatOpenAI(model_name="o4-mini", 
+            llm = ChatOpenAI(model_name=model_name, 
                              api_key=openai_api_key)
         
         return llm
