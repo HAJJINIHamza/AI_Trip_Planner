@@ -25,6 +25,7 @@ class WeatherInfoTool:
             if weather_data:
                 temp = weather_data.get("main", {}).get("temp", "N/A")
                 desc = weather_data.get("weather", [{}])[0].get("description", "N/A")
+                print(f"Current weeather in {city}: {temp}C, {desc}")
                 return f"Current weeather in {city}: {temp}C, {desc}"
             return f"Could not fetch weather for {city}"
         
@@ -43,6 +44,7 @@ class WeatherInfoTool:
                     temp = item["main"]["temp"]
                     desc = item["weather"][0]["description"]
                     forecast_summary.append(f"{date}: {temp}C, {desc}")
+                print (f"Weather forecast for {city}: \n" + '\n'.join(forecast_summary))
                 return f"Weather forecast for {city}: \n" + '\n'.join(forecast_summary)
             return f"Could not fetch forecast for {city}"
         

@@ -12,5 +12,7 @@ env
 
 #folders
 output/
+experiments/
+
 #secrets 
 .env

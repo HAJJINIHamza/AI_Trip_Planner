@@ -24,6 +24,8 @@ class PlaceSearchTool:
             try:
                 attraction_result = self.google_places_search.google_search_attractions(place)
                 if attraction_result:
+                    print ("@TOOL : search_attractions is being used")
+                    print (f"Following are the attractions of {place} as suggested by google: {attraction_result}")
                     return f"Following are the attractions of {place} as suggested by google: {attraction_result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_attractions(place)
@@ -37,6 +39,8 @@ class PlaceSearchTool:
             try:
                 result = self.google_places_search.google_search_restaurants(place)
                 if result:
+                    print ("@TOOL : search_restaurants is being used")
+                    print(f"Following are the restaurants of {place} as suggested by google: {result}")
                     return f"Following are the restaurants of {place} as suggested by google: {result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_restaurants (place)
@@ -50,7 +54,9 @@ class PlaceSearchTool:
             try:
                 result = self.google_places_search.google_search_activity (place)
                 if result:
-                    return f"Following are the activites of {place} as suggested by google: {result}"
+                    print ("@TOOL : search_activities is being used")
+                    print(f"Following are the activities of {place} as suggested by google: {result}")
+                    return f"Following are the activities of {place} as suggested by google: {result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_activity (place)
                 return f"Google cannot find the details due to {e}. \nFollowing are the activities of {place}: {tavily_result}"
@@ -63,7 +69,9 @@ class PlaceSearchTool:
             try:
                 result = self.google_places_search.google_search_transportation (place)
                 if result:
-                    return f"Following are the pransportation of {place} as suggested by google: {result}"
+                    print ("@TOOL : search_transportation is being used")
+                    print(f"Following are modes of transportation available in {place} as suggested by google: {result}")
+                    return f"Following are modes of transportation available in {place} as suggested by google: {result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_transportation (place)
                 return f"Google cannot find the details due to {e}. \nFollowing are the transportation of {place}: {tavily_result}"
