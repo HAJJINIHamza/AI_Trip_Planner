@@ -10,5 +10,7 @@ wheels/
 .venv
 env
 
+#folders
+output/
 #secrets 
 .env
