@@ -12,7 +12,7 @@ class CalculatorTool:
         Setup all tools for the calculator tool
         """
         @tool 
-        def estimate_total_hotel_cost(price_per_night:str, total_days:float) -> float:
+        def estimate_total_hotel_cost(price_per_night:float, total_days:float) -> float:
             """
             Estimate total hotel cost
             """

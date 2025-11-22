@@ -33,15 +33,16 @@ class GooglePlaceSearchTool:
         return self.places_tool.run(f"What are the different modes of transportation available in {place}")
     
 class TavilyPlaceSearchTool:
-    def __init__(self):
-        pass
+    def __init__(self, api_key: str):
+        self.tavily_tool = TavilySearch(topic="general", 
+                                          include_answer="advanced",
+                                          tavily_api_key = api_key)
 
-    def tavily_search_attractions(slef, place:str) -> dict:
+    def tavily_search_attractions(self, place:str) -> dict:
         """
         Searches for attractions in the specified place using TavilySearch
         """
-        tavily_tool = TavilySearch(topic="general", include_answer="advanced")
-        result = tavily_tool.invoke({"query": f"top attractive places in and around {place}"})
+        result = self.tavily_tool.invoke({"query": f"top attractive places in and around {place}"})
         if isinstance(result, dict) and result.get("answre"):
             return result["answer"]
         return result
@@ -50,8 +51,7 @@ class TavilyPlaceSearchTool:
         """
         Searches for available restaurants in the specified place using TavilySearch
         """
-        tavily_tool = TavilySearch(topic="general", include_answer="advanced")
-        result = tavily_tool.invoke({"query": f"top restaurants in and around {place}"})
+        result = self.tavily_tool.invoke({"query": f"top restaurants in and around {place}"})
         if isinstance(result, dict) and result.get("answre"):
             return result["answer"]
         return result
@@ -60,8 +60,7 @@ class TavilyPlaceSearchTool:
         """
         Searches for popular activities in the specified place using TavilySearch
         """
-        tavily_tool = TavilySearch(topic="general", include_answer="advanced")
-        result = tavily_tool.invoke({"query": f"top activites in and around {place}"})
+        result = self.tavily_tool.invoke({"query": f"top activites in and around {place}"})
         if isinstance(result, dict) and result.get("answre"):
             return result["answer"]
         return result
@@ -70,8 +69,7 @@ class TavilyPlaceSearchTool:
         """
         Searches for available modes of transportation in the specified place using TavilySearch
         """
-        tavily_tool = TavilySearch(topic="general", include_answer="advanced")
-        result = tavily_tool.invoke({"query": f"what are different mode of transportations available in {place}"})
+        result = self.tavily_tool.invoke({"query": f"what are different mode of transportations available in {place}"})
         if isinstance(result, dict) and result.get("answre"):
             return result["answer"]
         return result

@@ -9,7 +9,7 @@ class PlaceSearchTool:
         load_dotenv()
         self.google_api_key = os.environ.get("GPLACES_API_KEY")
         self.google_places_search = GooglePlaceSearchTool(self.google_api_key)
-        self.tavily_search = TavilyPlaceSearchTool()
+        self.tavily_search = TavilyPlaceSearchTool(api_key = os.environ["TAVILY_API_KEY"])
         self.place_search_tool_list = self._setup_tools()
 
     def _setup_tools(self) -> List:
@@ -30,7 +30,7 @@ class PlaceSearchTool:
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_attractions(place)
                 print (f"Following are the attractions of {place} as suggested by tavily: {tavily_result}")
-                return f"Google cannot find the details due to {e}. \nFollowing are the attractions of {place}: {tavily_result}"
+                return f"Google cannot find the details. \nFollowing are the attractions of {place}: {tavily_result}"
             
         @tool 
         def search_restaurants(place:str) -> str:
@@ -46,8 +46,8 @@ class PlaceSearchTool:
                     return f"Following are the restaurants of {place} as suggested by google: {result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_restaurants (place)
-                print(f"Google cannot find the details due to {e}. \nFollowing are the restaurants of {place}: {tavily_result}")
-                return f"Google cannot find the details due to {e}. \nFollowing are the restaurants of {place}: {tavily_result}"
+                print(f"Google cannot find the details. \nFollowing are the restaurants of {place}: {tavily_result}")
+                return f"Google cannot find the details. \nFollowing are the restaurants of {place}: {tavily_result}"
             
         @tool
         def search_activities(place:str) -> str:
@@ -63,8 +63,8 @@ class PlaceSearchTool:
                     return f"Following are the activities of {place} as suggested by google: {result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_activity (place)
-                print (f"Google cannot find the details due to {e}. \nFollowing are the activities of {place}: {tavily_result}")
-                return f"Google cannot find the details due to {e}. \nFollowing are the activities of {place}: {tavily_result}"
+                print (f"Google cannot find the details. \nFollowing are the activities of {place}: {tavily_result}")
+                return f"Google cannot find the details. \nFollowing are the activities of {place}: {tavily_result}"
             
         @tool
         def search_transportation(place:str) -> str:
@@ -80,8 +80,8 @@ class PlaceSearchTool:
                     return f"Following are modes of transportation available in {place} as suggested by google: {result}"
             except Exception as e:
                 tavily_result = self.tavily_search.tavily_search_transportation (place)
-                print (f"Google cannot find the details due to {e}. \nFollowing are the transportation of {place}: {tavily_result}")
-                return f"Google cannot find the details due to {e}. \nFollowing are the transportation of {place}: {tavily_result}"
+                print (f"Google cannot find the details. \nFollowing are the transportation of {place}: {tavily_result}")
+                return f"Google cannot find the details. \nFollowing are the transportation of {place}: {tavily_result}"
             
         return [search_attractions, search_restaurants, search_activities, search_transportation] 
 

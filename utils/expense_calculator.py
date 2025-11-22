@@ -1,6 +1,6 @@
 class Calculator:
     @staticmethod
-    def multiply(a:int, b:int):
+    def multiply(a:float, b:float):
         """
         Mutliply two integers
         
