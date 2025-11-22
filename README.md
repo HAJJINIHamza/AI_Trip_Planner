@@ -3,14 +3,22 @@
 ### Description :
 An Agent AI for planning a trip to any city in the world using real time data 
 
-### Objectives :
-1. Real time weather info
-2. Attraction & Activity for a specific city 
-3. Hotel cost for different days
-4. Currency conversions
+### Agent capabilities :
+1. Extract real time weather info
+2. Extract attractions & activities for a specific city 
+3. Extract available hotels and their costs for different days
+4. Perform currency conversions
 5. Itinery planning, what cities to visit and when
-6. Total expenses estimation 
-7. General summary of the trip
+6. Perform calculations and estimate total travel expenses
+7. Extract available modes of transportations in a city
+8. Organize all the data above into a human comprehensive travel plan
+9. Generate a summary of the trip
+
+### Tools and APIs
+1. Weather tools - current and forecast weather in any city
+2. GOOGLE Map or Tavily Map for places searching (restaurants, attractions, activities, transportation etc.)
+3. Currency conversion tools - to convert from any currency to any currency
+4. Calculations - to perform different calculations of total expenses, individual shares and daily costs.
 
 ### System test screenshot 
 ![System test screenshot](ai_trip_planner_test_screenshot.png)
