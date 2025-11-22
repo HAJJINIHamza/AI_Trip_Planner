@@ -16,6 +16,7 @@ class CalculatorTool:
             """
             Estimate total hotel cost
             """
+            print ("@TOOL : estimate_total_hotel_cost is being used")
             return self.calculator.multiply(price_per_night, total_days)
         
         @tool
@@ -23,6 +24,7 @@ class CalculatorTool:
             """
             Calculate total expense of the trip
             """
+            print ("@TOOL : calculate_total_expense is being used")
             return self.calculator.calculate_total(*costs)
         
         @tool
@@ -30,6 +32,7 @@ class CalculatorTool:
             """
             Calculate daily expense
             """
+            print ("@TOOL : calculate_daily_expense_budget is being used")
             return self.calculator.calculate_daily_budget(total_cost, days)
         
         return [estimate_total_hotel_cost, calculate_total_expense, calculate_daily_expense_budget]
