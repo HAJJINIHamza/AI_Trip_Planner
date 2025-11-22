@@ -36,6 +36,7 @@ async def query_travel_agent(query : QueryRequest):
         print (f"Graph saved in 'my_graph.png' at {os.getcwd()}")
         #Assuming request is a pydantic object like : {"question": "text"}
         messages = {"messages": [query.question]}
+        print ("Invoking graph ... ")
         output = react_app.invoke(messages)
         print ("Agent output :", output)
 

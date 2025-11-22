@@ -20,13 +20,13 @@ class WeatherInfoTool:
             """
             Get current weather for a city
             """
-            print ("Loading current weather for city : ", city)
+            print ("@TOOL: get_current_weather is being used")
             weather_data = self.weather_service.get_current_weather(city)
             if weather_data:
                 temp = weather_data.get("main", {}).get("temp", "N/A")
                 desc = weather_data.get("weather", [{}])[0].get("description", "N/A")
-                print(f"Current weeather in {city}: {temp}C, {desc}")
-                return f"Current weeather in {city}: {temp}C, {desc}"
+                print(f"Current weeather in {city}: {temp} k, {desc}")
+                return f"Current weeather in {city}: {temp} k, {desc}"
             return f"Could not fetch weather for {city}"
         
         @tool 
