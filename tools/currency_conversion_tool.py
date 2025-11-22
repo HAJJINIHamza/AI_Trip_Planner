@@ -20,6 +20,7 @@ class CurrencyConverterTool:
             """
             Convert amount from one currency to another
             """
+            print("@TOOL: convert_currency is being used")
             return self.currency_service.convert(amount, from_currency, to_currency)
         
         return [convert_currency]
